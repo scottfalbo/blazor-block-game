@@ -11,7 +11,7 @@ namespace BlazorBlockGame.Pages
     {
         [Inject] GameService GameService { get; set; }
 
-        private int[,] GameBoard;
+        private GameCell[,] GameBoard;
         private int X;
         private int Y;
 

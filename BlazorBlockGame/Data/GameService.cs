@@ -7,16 +7,20 @@ namespace BlazorBlockGame.Data
 {
     public class GameService
     {
-        public int[,] CreateBoard(int x, int y)
+        public GameCell[,] CreateBoard(int x, int y)
         {
-            int[,] newGame = new int[x, y];
+            GameCell[,] newGame = new GameCell[x, y];
             int counter = 1;
 
             for (int i = 0; i < x; i++)
             {
                 for (int j = 0; j < y; j++)
                 {
-                    newGame[i, j] = counter;
+                    newGame[i, j] = new GameCell()
+                    {
+                        Id = counter,
+                        ImageUrl = $"someurl{counter}"
+                    };
                     counter++;
                 }
             }
