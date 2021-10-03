@@ -7,9 +7,21 @@ namespace BlazorBlockGame.Data
 {
     public class GameService
     {
-        public string Hello = "Injected";
+        public int[,] CreateBoard(int x, int y)
+        {
+            int[,] newGame = new int[x, y];
+            int counter = 1;
 
-        // make game
+            for (int i = 0; i < x; i++)
+            {
+                for (int j = 0; j < y; j++)
+                {
+                    newGame[i, j] = counter;
+                    counter++;
+                }
+            }
+            return newGame;
+        }
 
         // make move
 

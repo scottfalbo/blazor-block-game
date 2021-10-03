@@ -2,5 +2,17 @@
 
 <h1>Blazor Block Game</h1>
 
-@Testing
+<table>
+    @for (int i = 0; i < X; i++)
+    {
+        <tr>
+            @for (int j = 0; j < Y; j++)
+            {
+                <td>
+                    @GameBoard[i,j]
+                </td>
+            }
+        </tr>
+    }
+</table>
 

@@ -11,11 +11,15 @@ namespace BlazorBlockGame.Pages
     {
         [Inject] GameService GameService { get; set; }
 
-        private string Testing;
+        private int[,] GameBoard;
+        private int X;
+        private int Y;
 
         protected override async Task OnInitializedAsync()
         {
-            Testing = GameService.Hello;
+            X = 5;
+            Y = 5;
+            GameBoard =  GameService.CreateBoard(X, Y);   
         }
     }
 }
