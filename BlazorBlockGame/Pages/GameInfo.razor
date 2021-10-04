@@ -1,0 +1,13 @@
+﻿<h3>Number of Moves: @NumberOfMoves</h3>
+@if(Winner)
+{
+    <p>You Won!</p>
+}
+
+
+@code {
+    [Parameter]
+    public int NumberOfMoves { get; set; } = 0;
+    [Parameter]
+    public bool Winner { get; set; } 
+}

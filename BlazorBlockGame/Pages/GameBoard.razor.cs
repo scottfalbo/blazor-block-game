@@ -16,10 +16,12 @@ namespace BlazorBlockGame.Pages
         private int Y;
         private GameCell RemovedCell;
         private bool Winner;
+        private int NumberOfMoves;
 
         protected override void OnInitialized()
         {
             Winner = false;
+            NumberOfMoves = 0;
             X = 3;
             Y = 3;
             Puzzle = GameService.CreateBoard(X, Y);
@@ -40,10 +42,11 @@ namespace BlazorBlockGame.Pages
                     Puzzle.Rows[move.X].Cells[move.Y].X = move.X;
                     Puzzle.Rows[move.X].Cells[move.Y].Y = move.Y;
                     Puzzle.Rows[x].Cells[y] = null;
+                    NumberOfMoves++;
                 }
 
                 Winner = GameService.CheckWinner(Puzzle);
-                if (Winner) Puzzle.Rows[Puzzle.X - 1].Cells[Puzzle.Y - 1] = RemovedCell;
+                //if (Winner) Puzzle.Rows[Puzzle.X - 1].Cells[Puzzle.Y - 1] = RemovedCell;
             }
         }
     }
