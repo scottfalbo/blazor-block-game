@@ -22,8 +22,8 @@ namespace BlazorBlockGame.Pages
         {
             Winner = false;
             NumberOfMoves = 0;
-            X = 3;
-            Y = 3;
+            X = 4;
+            Y = 4;
             Puzzle = GameService.CreateBoard(X, Y);
             RemovedCell = Puzzle.Rows[X - 1].Cells[Y - 1];
             Puzzle.Rows[X - 1].Cells[Y - 1] = null;

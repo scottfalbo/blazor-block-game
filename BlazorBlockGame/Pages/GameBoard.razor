@@ -10,6 +10,7 @@
                 @if (cell != null)
                 {
                     <button class="cell-button" @onclick="() => ClickCell(cell.X, cell.Y)">
+                        @*<img src="@cell.ImageUrl" />*@
                         @cell.Id
                     </button>
                 }
