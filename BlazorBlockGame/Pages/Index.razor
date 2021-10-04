@@ -11,8 +11,11 @@
         <td class="game-cell">
             @if (GameBoard[i, j] != null)
             {
-                <button class="cell-button" @onclick="ClickCell">@GameBoard[i, j].Id</button>
-            }
+                <button class="cell-button" @onclick="() => ClickCell(i, j)">
+                    @GameBoard[i, j].Id <br />
+                    @GameBoard[i,j].X, @GameBoard[i,j].Y
+                </button>
+           }
         </td>
         }
     </tr>

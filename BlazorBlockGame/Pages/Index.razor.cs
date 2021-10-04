@@ -1,5 +1,6 @@
 ﻿using BlazorBlockGame.Data;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,9 +27,13 @@ namespace BlazorBlockGame.Pages
             GameBoard = GameService.RandomizeBoard(GameBoard, X, Y);
         }
 
-        public void ClickCell()
+        public void ClickCell(int x, int y)
         {
-
+            Console.WriteLine("");
+            // check around open space
+                // board edges
+            // move into if
+            // check for winner
         }
     }
 }
