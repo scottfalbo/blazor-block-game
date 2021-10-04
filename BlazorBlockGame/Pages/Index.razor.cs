@@ -25,5 +25,10 @@ namespace BlazorBlockGame.Pages
             GameBoard[X - 1, Y - 1] = null;
             GameBoard = GameService.RandomizeBoard(GameBoard, X, Y);
         }
+
+        public void ClickCell()
+        {
+
+        }
     }
 }

@@ -1,6 +1,12 @@
 ﻿.game-cell {
     background-color: #808080;
-    border: 1px solid #000;
     width: 60px;
     height: 60px;
+}
+
+.cell-button {
+    background-color: #fff;
+    width: 60px;
+    height: 60px;
+    border: 1px solid #000;
 }

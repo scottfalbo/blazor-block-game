@@ -8,12 +8,12 @@
     <tr>
         @for (int j = 0; j < Y; j++)
         {
+        <td class="game-cell">
             @if (GameBoard[i, j] != null)
             {
-                <td class="game-cell">
-                    @GameBoard[i, j].Id
-                </td>
+                <button class="cell-button" @onclick="ClickCell">@GameBoard[i, j].Id</button>
             }
+        </td>
         }
     </tr>
     }
