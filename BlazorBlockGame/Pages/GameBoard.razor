@@ -10,8 +10,7 @@
                 @if (cell != null)
                 {
                     <button class="cell-button" @onclick="() => ClickCell(cell.X, cell.Y)">
-                        @cell.Id <br />
-                        @cell.X, @cell.Y
+                        @cell.Id
                     </button>
                 }
             </td>
@@ -22,7 +21,7 @@
 </table>
 
 @if(Winner)
-            {
-                <p>you win</p>
-            }
+{
+    <p>you win</p>
+}
 

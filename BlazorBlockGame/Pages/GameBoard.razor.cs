@@ -30,17 +30,21 @@ namespace BlazorBlockGame.Pages
 
         public void ClickCell(int x, int y)
         {
-            Coords move = GameService.AvailableMove(Puzzle, x, y);
-            
-            if (move != null)
+            if (!Winner)
             {
-                Puzzle.Rows[move.X].Cells[move.Y] = Puzzle.Rows[x].Cells[y];
-                Puzzle.Rows[move.X].Cells[move.Y].X = move.X;
-                Puzzle.Rows[move.X].Cells[move.Y].Y = move.Y;
-                Puzzle.Rows[x].Cells[y] = null;
-            }
+                Coords move = GameService.AvailableMove(Puzzle, x, y);
 
-            Winner = GameService.CheckWinner(Puzzle);
+                if (move != null)
+                {
+                    Puzzle.Rows[move.X].Cells[move.Y] = Puzzle.Rows[x].Cells[y];
+                    Puzzle.Rows[move.X].Cells[move.Y].X = move.X;
+                    Puzzle.Rows[move.X].Cells[move.Y].Y = move.Y;
+                    Puzzle.Rows[x].Cells[y] = null;
+                }
+
+                Winner = GameService.CheckWinner(Puzzle);
+                if (Winner) Puzzle.Rows[Puzzle.X - 1].Cells[Puzzle.Y - 1] = RemovedCell;
+            }
         }
     }
 }
