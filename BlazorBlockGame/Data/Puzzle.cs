@@ -28,6 +28,8 @@ namespace BlazorBlockGame.Data
                         Id = counter,
                         X = i,
                         Y = j,
+                        SolvedX = i,
+                        SolvedYY = j,
                         ImageUrl = $"someurl_{counter}"
                     };
                     counter++;

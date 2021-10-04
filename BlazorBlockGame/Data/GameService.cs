@@ -81,11 +81,23 @@ namespace BlazorBlockGame.Data
             return null;
         }
 
-        // make move
+        public bool CheckWinner(Puzzle board)
+        {
+            bool winner = true;
 
-        // check move
-
-        // check winner
+            foreach(Row rows in board.Rows)
+            {
+                foreach(GameCell cell in rows.Cells)
+                {
+                    if (cell != null)
+                    {
+                        if (cell.X != cell.SolvedX || cell.Y != cell.SolvedYY)
+                            winner = false;
+                    }
+                }
+            }
+            return winner;
+        }
 
     }
 }

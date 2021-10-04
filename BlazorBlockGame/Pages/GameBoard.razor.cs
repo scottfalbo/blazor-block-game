@@ -15,9 +15,11 @@ namespace BlazorBlockGame.Pages
         private int X;
         private int Y;
         private GameCell RemovedCell;
+        private bool Winner;
 
         protected override void OnInitialized()
         {
+            Winner = false;
             X = 3;
             Y = 3;
             Puzzle = GameService.CreateBoard(X, Y);
@@ -38,8 +40,7 @@ namespace BlazorBlockGame.Pages
                 Puzzle.Rows[x].Cells[y] = null;
             }
 
-            // move into if
-            // check for winner
+            Winner = GameService.CheckWinner(Puzzle);
         }
     }
 }
