@@ -8,9 +8,13 @@ namespace BlazorBlockGame.Data
     public class Puzzle
     {
         public Row[] Rows { get; set; }
+        public int X { get; set; }
+        public int Y { get; set; }
 
         public Puzzle(int x, int y)
         {
+            X = x;
+            Y = y;
             int counter = 1;
             Rows = new Row[x];
 

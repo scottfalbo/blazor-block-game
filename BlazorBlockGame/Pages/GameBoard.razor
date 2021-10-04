@@ -5,15 +5,17 @@
         <tr>
             @foreach (var cell in rows.Cells)
             {
-                if (cell != null)
+
+            <td class="game-cell">
+                @if (cell != null)
                 {
-            <td>
-                <button class="cell-button" @onclick="() => ClickCell(cell.X, cell.Y)">
-                    @cell.Id <br />
-                    @cell.X, @cell.Y
-                </button>
-            </td>
+                    <button class="cell-button" @onclick="() => ClickCell(cell.X, cell.Y)">
+                        @cell.Id <br />
+                        @cell.X, @cell.Y
+                    </button>
                 }
+            </td>
+                
             }
         </tr>
     }

@@ -28,8 +28,8 @@ namespace BlazorBlockGame.Pages
 
         public void ClickCell(int x, int y)
         {
+            Coords move = GameService.AvailableMove(Puzzle, x, y);
             Console.WriteLine("");
-            // check around open space
             // board edges
             // move into if
             // check for winner
