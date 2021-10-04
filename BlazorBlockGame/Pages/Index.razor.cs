@@ -14,12 +14,16 @@ namespace BlazorBlockGame.Pages
         private GameCell[,] GameBoard;
         private int X;
         private int Y;
+        private GameCell RemovedCell;
 
-        protected override async Task OnInitializedAsync()
+        protected override void OnInitialized()
         {
             X = 5;
             Y = 5;
-            GameBoard =  GameService.CreateBoard(X, Y);   
+            GameBoard =  GameService.CreateBoard(X, Y);
+            RemovedCell = GameBoard[X - 1, Y - 1];
+            GameBoard[X - 1, Y - 1] = null;
+            GameBoard = GameService.RandomizeBoard(GameBoard, X, Y);
         }
     }
 }

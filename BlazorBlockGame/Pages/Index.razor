@@ -5,14 +5,17 @@
 <table>
     @for (int i = 0; i < X; i++)
     {
-        <tr>
-            @for (int j = 0; j < Y; j++)
+    <tr>
+        @for (int j = 0; j < Y; j++)
+        {
+            @if (GameBoard[i, j] != null)
             {
                 <td class="game-cell">
-                    @GameBoard[i,j].Id
+                    @GameBoard[i, j].Id
                 </td>
             }
-        </tr>
+        }
+    </tr>
     }
 </table>
 
