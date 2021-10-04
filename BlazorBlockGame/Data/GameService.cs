@@ -81,6 +81,11 @@ namespace BlazorBlockGame.Data
             return null;
         }
 
+        /// <summary>
+        /// Checks to see if the puzzle in complete.
+        /// </summary>
+        /// <param name="board"> Puzzle object </param>
+        /// <returns> true : false </returns>
         public bool CheckWinner(Puzzle board)
         {
             bool winner = true;
@@ -91,7 +96,7 @@ namespace BlazorBlockGame.Data
                 {
                     if (cell != null)
                     {
-                        if (cell.X != cell.SolvedX || cell.Y != cell.SolvedYY)
+                        if (cell.X != cell.SolvedX || cell.Y != cell.SolvedY)
                             winner = false;
                     }
                 }

@@ -11,7 +11,7 @@ namespace BlazorBlockGame.Data
         public int X { get; set; }
         public int Y { get; set; }
         public int SolvedX { get; set; }
-        public int SolvedYY { get; set; }
+        public int SolvedY { get; set; }
         public string ImageUrl { get; set; }
     }
 }
