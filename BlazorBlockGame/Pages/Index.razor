@@ -2,23 +2,5 @@
 
 <h1>Blazor Block Game</h1>
 
-<table>
-    @for (int i = 0; i < X; i++)
-    {
-    <tr>
-        @for (int j = 0; j < Y; j++)
-        {
-        <td class="game-cell">
-            @if (GameBoard[i, j] != null)
-            {
-                <button class="cell-button" @onclick="() => ClickCell(i, j)">
-                    @GameBoard[i, j].Id <br />
-                    @GameBoard[i,j].X, @GameBoard[i,j].Y
-                </button>
-           }
-        </td>
-        }
-    </tr>
-    }
-</table>
+<GameBoard />
 
