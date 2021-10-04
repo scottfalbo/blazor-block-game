@@ -18,8 +18,8 @@ namespace BlazorBlockGame.Pages
 
         protected override void OnInitialized()
         {
-            X = 5;
-            Y = 5;
+            X = 3;
+            Y = 3;
             Puzzle = GameService.CreateBoard(X, Y);
             RemovedCell = Puzzle.Rows[X - 1].Cells[Y - 1];
             Puzzle.Rows[X - 1].Cells[Y - 1] = null;
@@ -29,8 +29,15 @@ namespace BlazorBlockGame.Pages
         public void ClickCell(int x, int y)
         {
             Coords move = GameService.AvailableMove(Puzzle, x, y);
-            Console.WriteLine("");
-            // board edges
+            
+            if (move != null)
+            {
+                Puzzle.Rows[move.X].Cells[move.Y] = Puzzle.Rows[x].Cells[y];
+                Puzzle.Rows[move.X].Cells[move.Y].X = move.X;
+                Puzzle.Rows[move.X].Cells[move.Y].Y = move.Y;
+                Puzzle.Rows[x].Cells[y] = null;
+            }
+
             // move into if
             // check for winner
         }
