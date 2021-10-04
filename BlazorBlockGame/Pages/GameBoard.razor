@@ -1,19 +1,21 @@
-﻿<table>
-    @for (int i = 0; i < X; i++)
+﻿
+<table>
+    @foreach (var rows in Puzzle.Rows)
     {
         <tr>
-            @for (int j = 0; j < Y; j++)
+            @foreach (var cell in rows.Cells)
             {
-                <td class="game-cell">
-                    @if (Board[i, j] != null)
-                    {
-                        <button class="cell-button" @onclick="() => ClickCell(i, j)">
-                            @Board[i, j].Id <br />
-                            @Board[i, j].X, @Board[i, j].Y
-                        </button>
-                    }
-                </td>
+                if (cell != null)
+                {
+            <td>
+                <button class="cell-button" @onclick="() => ClickCell(cell.X, cell.Y)">
+                    @cell.Id <br />
+                    @cell.X, @cell.Y
+                </button>
+            </td>
+                }
             }
         </tr>
     }
 </table>
+

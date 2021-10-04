@@ -11,7 +11,7 @@ namespace BlazorBlockGame.Pages
     {
         [Inject] GameService GameService { get; set; }
 
-        private GameCell[,] Board;
+        private Puzzle Puzzle;
         private int X;
         private int Y;
         private GameCell RemovedCell;
@@ -20,10 +20,10 @@ namespace BlazorBlockGame.Pages
         {
             X = 5;
             Y = 5;
-            Board = GameService.CreateBoard(X, Y);
-            RemovedCell = Board[X - 1, Y - 1];
-            Board[X - 1, Y - 1] = null;
-            Board = GameService.RandomizeBoard(Board, X, Y);
+            Puzzle = GameService.CreateBoard(X, Y);
+            RemovedCell = Puzzle.Rows[X - 1].Cells[Y - 1];
+            Puzzle.Rows[X - 1].Cells[Y - 1] = null;
+            //Board = GameService.RandomizeBoard(Board, X, Y);
         }
 
         public void ClickCell(int x, int y)
