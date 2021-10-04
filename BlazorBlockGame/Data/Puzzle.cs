@@ -29,7 +29,7 @@ namespace BlazorBlockGame.Data
                         X = i,
                         Y = j,
                         SolvedX = i,
-                        SolvedYY = j,
+                        SolvedY = j,
                         ImageUrl = $"images/fireflower_{counter}.gif"
                     };
                     counter++;
