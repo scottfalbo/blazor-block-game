@@ -23,7 +23,7 @@ namespace BlazorBlockGame.Pages
             Puzzle = GameService.CreateBoard(X, Y);
             RemovedCell = Puzzle.Rows[X - 1].Cells[Y - 1];
             Puzzle.Rows[X - 1].Cells[Y - 1] = null;
-            //Board = GameService.RandomizeBoard(Board, X, Y);
+            Puzzle = GameService.RandomizeBoard(Puzzle, X, Y);
         }
 
         public void ClickCell(int x, int y)
