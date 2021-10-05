@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BlazorBlockGame.Pages
 {
-    public partial class GameBoard
+    public partial class GameBoard : ComponentBase
     {
         [Inject] GameService GameService { get; set; }
 
@@ -46,7 +46,7 @@ namespace BlazorBlockGame.Pages
                 }
 
                 Winner = GameService.CheckWinner(Puzzle);
-                //if (Winner) Puzzle.Rows[Puzzle.X - 1].Cells[Puzzle.Y - 1] = RemovedCell;
+                if (Winner) Puzzle.Rows[Puzzle.X - 1].Cells[Puzzle.Y - 1] = RemovedCell;
             }
         }
     }

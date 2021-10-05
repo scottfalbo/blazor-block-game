@@ -1,15 +1,44 @@
 ﻿.game-cell {
-    background-color: #000;
+    background-color: #fff;
     width: 60px;
     height: 60px;
+    vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
 }
 
 .cell-button {
-    width: 100%;
-    height: 100%;
-    border: none;
-    background-color: #fff;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
+    width: 60px;
+    height: 60px;
+    vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.cell-button img {
+    width: 60px;
+    height: 60px;
+    vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+tr {
+    vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    line-height: 0;
 }

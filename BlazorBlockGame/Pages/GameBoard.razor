@@ -1,6 +1,5 @@
-﻿
-@page "/gameboard"
-
+﻿@page "/gameboard"
+ 
 <table>
     @foreach (var rows in Puzzle.Rows)
     {
@@ -12,8 +11,7 @@
                 @if (cell != null)
                 {
                     <button class="cell-button" @onclick="() => ClickCell(cell.X, cell.Y)">
-                        @*<img src="@cell.ImageUrl" />*@
-                        @cell.Id
+                        <img src="@cell.ImageUrl" />
                     </button>
                 }
             </td>
