@@ -29,6 +29,7 @@ namespace BlazorBlockGame
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<GameService>();
+            services.AddSingleton<LoadImageService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

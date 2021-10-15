@@ -1,25 +1,28 @@
 ﻿@page "/gameboard"
  
-<table>
-    @foreach (var rows in Puzzle.Rows)
-    {
-        <tr>
-            @foreach (var cell in rows.Cells)
-            {
 
-            <td class="game-cell">
-                @if (cell != null)
+<div class="gameboard">
+    <table>
+        @foreach (var rows in Puzzle.Rows)
+        {
+            <tr>
+                @foreach (var cell in rows.Cells)
                 {
-                    <button class="cell-button" @onclick="() => ClickCell(cell.X, cell.Y)">
-                        <img src="@cell.ImageUrl" />
-                    </button>
+
+                    <td class="game-cell">
+                        @if (cell != null)
+                        {
+                            <button class="cell-button" @onclick="() => ClickCell(cell.X, cell.Y)">
+                                <img src="@cell.ImageUrl" />
+                            </button>
+                        }
+                    </td>
+
                 }
-            </td>
-                
-            }
-        </tr>
-    }
-</table>
+            </tr>
+        }
+    </table>
+</div>
 
 <GameInfo 
     NumberOfMoves="@NumberOfMoves"
