@@ -22,7 +22,7 @@ namespace BlazorBlockGame.Pages
         {
             Winner = false;
             NumberOfMoves = 0;
-            X = 4;
+            X = 7;
             Y = 4;
             Puzzle = GameService.CreateBoard(X, Y);
             RemovedCell = Puzzle.Rows[X - 1].Cells[Y - 1];

@@ -30,7 +30,7 @@ namespace BlazorBlockGame.Data
                         Y = j,
                         SolvedX = i,
                         SolvedY = j,
-                        ImageUrl = $"images/fireflower_{counter}.gif"
+                        ImageUrl = $"images/snes_controller/images/snes_controller_{counter}.jpg"
                     };
                     counter++;
                 }
